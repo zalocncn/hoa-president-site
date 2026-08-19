@@ -58,12 +58,13 @@ without the `.html` suffix, only applies once deployed.)
 ## Deploy
 
 ```
-cd /Users/z/hoa-president-site
+cd <repo root>
 vercel --prod
 ```
 
-The Vercel project is `hoa-president-site`. No custom domain is attached yet — that's a
-separate step. After any deploy, confirm `/`, `/privacy`, and `/terms` resolve, and
+The Vercel project is `hoa-president-site`, serving the apex domain
+`hoapresidentgame.com` (with `www` 308-redirecting to it). After any deploy, confirm
+`/`, `/privacy`, and `/terms` resolve, and
 optionally `curl -I` the live response to confirm the CSP, HSTS, X-Content-Type-Options,
 X-Frame-Options, Referrer-Policy, and Permissions-Policy headers are present.
 

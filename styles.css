@@ -1,0 +1,849 @@
+/* Self-hosted type. No Google Fonts link anywhere: the site's CSP is
+   `font-src 'self'` and `style-src 'self'`, so both the stylesheet request
+   and the font files have to come from this origin. Licences ship next to
+   the files (fonts/OFL-*.txt). */
+
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/Spectral-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/Spectral-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Spectral";
+  src: url("/fonts/Spectral-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("/fonts/BarlowCondensed-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("/fonts/BarlowCondensed-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* HOA President — marketing site.
+
+   Three sections, in order:
+     1. shared base — parchment tokens and chrome the LEGAL pages run on
+        (the joke of the app's end screen is that everything becomes a
+        photocopied newsletter, so cream paper suits the paperwork pages).
+        The landing page overrides all of it under `body.lp`.
+     2. LANDING PAGE — "dusk over the subdivision": the app's own dark
+        spruce ground, cream type, suburban pastel accents. Every token is
+        lifted from the app's Palette.swift so site and app match.
+     3. LEGAL PAGES — privacy.html / terms.html. */
+
+:root {
+  --ink: #14181c;
+  --parchment: #f4efe2;
+  --oxide: #e9e2d1;
+  --garden: #3f7a38;
+  --bylaws: #a87f3e;
+  --max-w: 46rem;
+
+  color-scheme: light;
+  --bg: var(--parchment);
+  --fg: var(--ink);
+  --card-bg: #ffffff;
+  --rule: var(--oxide);
+  --muted: #4a4a46;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #0c120c;
+    --fg: var(--parchment);
+    --card-bg: #18211a;
+    --rule: #2e3a2a;
+    --muted: #b6b9a4;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .display {
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--garden);
+}
+
+@media (prefers-color-scheme: dark) {
+  a { color: #8fd497; }
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.wrap--wide {
+  max-width: 60rem;
+}
+
+/* ==================================================================
+   LANDING PAGE (index.html, body.lp)
+
+   The app's own appearance: a very dark spruce green (a lawn after the
+   streetlights come on, not neutral black), warm cream type, suburban
+   pastel accents. The phone lives in the sticky right rail above the
+   price card and pages through the app's real screens as the left
+   column scrolls past it.
+
+   Colour sources (HOAPresident/DesignSystem/Palette.swift):
+     ground #0C120C · panel #111812 · surface #18211A · track #293429
+     hairlines #2E3A2A / #35422F · cream #F2EFE2 · body #DEDCCB
+     secondary #8F977F · tertiary #848B76 · faint #6F7663
+     mint (category chrome) #8FC9A4 · periwinkle (selection) #A3B2E4
+     lawn #7FC98B · garden slate #7FBF6E · bylaws slate #C79A55
+   ================================================================== */
+
+body.lp {
+  --lp-ground: #0c120c;
+  --lp-card: #111812;
+  --lp-hair-24: #26301f;   /* quirk row borders */
+  --lp-hair-soft: #2e3a2a; /* eyebrow rule, footer rule */
+  --lp-hair: #35422f;      /* stat rules, price-card border */
+
+  --lp-text: #f2efe2;
+  --lp-hero-muted: #98a186;
+  --lp-body-muted: #b9bca4;
+  --lp-list-num: #6f7663;
+
+  --lp-label: #8f977f;
+  --lp-label-dim: #848b76;
+  --lp-label-dimmer: #6f7663;
+
+  --lp-ring: #8f977f;
+  --lp-rose: #f2efe2;
+  --lp-lawn: #7fc98b;
+
+  --lp-garden: #7fbf6e;
+  --lp-bylaws: #c79a55;
+  --lp-link: #ccd2b8;
+  --lp-link-rule: #59654c;
+  --lp-accent: #8fc9a4;    /* mint — the app's category chrome */
+  --lp-focus: #a3b2e4;     /* periwinkle — the app's selection color */
+
+  --lp-ui: "Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+
+  margin: 0;
+  background: var(--lp-ground);
+  color: var(--lp-text);
+  font-family: Spectral, Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 1.55;
+  /* `clip`, not `hidden`: `hidden` would make body a scroll container and
+     silently kill the sticky rail. */
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.lp a {
+  color: var(--lp-link);
+  text-decoration-color: var(--lp-link-rule);
+  text-underline-offset: 3px;
+}
+
+body.lp a:hover {
+  color: var(--lp-text);
+  text-decoration-color: currentColor;
+}
+
+body.lp :focus-visible {
+  outline: 2px solid var(--lp-focus);
+  outline-offset: 3px;
+}
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 34px clamp(20px, 5.5vw, 80px) 96px;
+}
+
+/* ---------- header ---------- */
+
+.hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hd-lockup {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.mark {
+  width: 54px;
+  height: 54px;
+  flex: none;
+  display: block;
+}
+
+/* The mark itself: the association's eight-point rose in a ring — same
+   geometry as favicon.svg. Compass or impact sprinkler, reader's choice. */
+.mark-ring { stroke: var(--lp-ring); }
+.mark-rose { fill: var(--lp-rose); }
+.mark-hub { fill: var(--lp-ground); }
+.mark-pip { fill: var(--lp-lawn); }
+
+.wordmark {
+  font-size: clamp(23px, 2.4vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.hd-status {
+  font-family: var(--lp-ui);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--lp-label);
+  white-space: nowrap;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding-top: clamp(52px, 7.5vw, 96px);
+  max-width: 1000px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(34px, 5.6vw, 62px);
+  line-height: 1.04;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: pretty;
+  color: var(--lp-text);
+}
+
+.hero-rest {
+  color: var(--lp-hero-muted);
+}
+
+/* ---------- three stat blocks ---------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: clamp(44px, 5.6vw, 72px);
+  max-width: 900px;
+}
+
+.stat {
+  border-top: 1px solid var(--lp-hair);
+  padding: 16px 24px 0 0;
+}
+
+.stat-n {
+  font-size: clamp(25px, 2.7vw, 34px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.stat-l {
+  margin-top: 8px;
+  font-family: var(--lp-ui);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lp-label);
+  line-height: 1.3;
+}
+
+/* ---------- two-column main ---------- */
+
+.main {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(40px, 5.6vw, 72px);
+  align-items: start;
+  margin-top: clamp(56px, 7.5vw, 96px);
+}
+
+/* --- left: from the minutes --- */
+
+.desk {
+  min-width: 0;
+}
+
+.eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lp .eyebrow {
+  margin: 0;
+  font-family: var(--lp-ui);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--lp-accent);
+}
+
+.eyebrow-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--lp-hair-soft);
+}
+
+.quirks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.quirks li {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 0 20px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--lp-hair-24);
+}
+
+.quirks li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.q-num {
+  font-family: var(--lp-ui);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--lp-list-num);
+  padding-top: 8px;
+}
+
+.quirks p {
+  margin: 0;
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.5;
+  color: var(--lp-body-muted);
+  text-wrap: pretty;
+}
+
+.quirks b {
+  font-weight: 600;
+  color: var(--lp-text);
+}
+
+/* --- right: the sticky rail (phone + price card) --- */
+
+.rail {
+  position: sticky;
+  top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 26px;
+}
+
+.device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* The phone is sized so the whole rail — phone, gap, price card — still
+   fits one viewport, which is what makes the sticky paging readable. */
+.phone {
+  position: relative;
+  width: clamp(150px, calc((100svh - 350px) * 0.46), 232px);
+  padding: 7px;
+  border-radius: 34px;
+  background: linear-gradient(145deg, #d9ddd2, #99a094 34%, #5e695a 60%, #38422f 80%, #161d15);
+  box-shadow:
+    0 34px 60px -26px rgba(0, 0, 0, 0.7),
+    0 8px 20px rgba(0, 0, 0, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.28);
+}
+
+.phone-rim {
+  padding: 3px;
+  border-radius: 28px;
+  background: #05080a;
+}
+
+.phone-screen {
+  position: relative;
+  aspect-ratio: 1178 / 2556;
+  overflow: hidden;
+  border-radius: 25px;
+  background: var(--lp-ground);
+}
+
+.shot {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  /* linear, and short: an eased cross-fade leaves both layers visibly
+     blended at the midpoint, which reads as a double exposure. */
+  transition: opacity 0.28s linear;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.shot figcaption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* First screen shows even with JS off; app.js takes over once it runs. */
+.shot:first-child,
+.shot.is-active {
+  opacity: 1;
+}
+
+.js .shot:first-child {
+  opacity: 0;
+}
+
+.js .shot.is-active {
+  opacity: 1;
+}
+
+.reel-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.reel-dot {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  padding: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--lp-hair);
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.reel-dot:hover {
+  background: var(--lp-list-num);
+}
+
+.reel-dot.is-active {
+  width: 22px;
+  background: var(--lp-lawn);
+}
+
+.reel-hint {
+  margin: 0;
+  font-family: var(--lp-ui);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lp-label-dimmer);
+  transition: opacity 0.4s ease;
+}
+
+/* Retired once the visitor is steering by hand, and once the reel has reached
+   its last screen — by then there is nothing left to keep scrolling for. */
+.is-driving .reel-hint,
+.is-done .reel-hint {
+  opacity: 0;
+}
+
+/* --- the price card --- */
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: clamp(24px, 2.6vw, 34px);
+  border: 1px solid var(--lp-hair);
+  border-radius: 5px;
+  background: var(--lp-card);
+}
+
+.price-n {
+  font-size: clamp(32px, 3.2vw, 40px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.price-copy {
+  margin: 0;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.5;
+  color: var(--lp-body-muted);
+  text-wrap: pretty;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 54px;
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 3px;
+  font-family: var(--lp-ui);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  background: var(--lp-text);
+  color: var(--lp-ground);
+}
+
+.pill .dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--lp-lawn);
+  animation: lp-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes lp-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.32; }
+}
+
+/* ---------- footer ---------- */
+
+.ft {
+  margin-top: clamp(56px, 7.5vw, 96px);
+  padding-top: 26px;
+  border-top: 1px solid var(--lp-hair-soft);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 60px);
+}
+
+.ft-neutral {
+  margin: 0;
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--lp-label-dim);
+  text-wrap: pretty;
+}
+
+.ft-neutral .garden { color: var(--lp-garden); }
+.ft-neutral .bylaws { color: var(--lp-bylaws); }
+
+.ft-meta {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-family: var(--lp-ui);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lp-label-dimmer);
+  white-space: nowrap;
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .shot,
+  .reel-dot,
+  .reel-hint { transition: none; }
+  .pill .dot { animation: none; }
+}
+
+/* ---------- narrow screens ------------------------------------------------
+   One honest column, in the order a stranger needs it: who this is, the hook,
+   the numbers, THE THING ITSELF, then the scenarios, the price, the footer.
+   Nothing is pinned and nothing hijacks a gesture. `display: contents` on the
+   rail dissolves the desktop wrapper so the phone and the price card can be
+   ordered independently around the quirks. */
+
+@media (max-width: 899px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(36px, 7vw, 56px);
+  }
+
+  .rail {
+    position: static;
+    display: contents;
+  }
+
+  .device { order: 1; }
+  .desk   { order: 2; }
+  .price  { order: 3; }
+
+  .phone { width: min(232px, 62vw, 34svh); }
+
+  .quirks li {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 0 14px;
+    padding: 22px 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stat {
+    padding: 14px 0 18px;
+  }
+
+  .stat:last-child { padding-bottom: 0; }
+
+  .ft {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .ft-meta {
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    white-space: normal;
+  }
+
+  /* The company line takes its own row so the two links sit together. */
+  .ft-meta span { flex: 0 0 100%; }
+
+  /* One line, at 360px too. */
+  .pill {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (max-width: 559px) {
+  .hd {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .hd-lockup { gap: 14px; }
+
+  .mark { width: 44px; height: 44px; }
+
+  .hd-status { font-size: 12px; }
+}
+
+/* ==================================================================
+   LEGAL PAGES (privacy.html, terms.html)
+   ================================================================== */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header .wrap {
+  max-width: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.brand .seal {
+  width: 34px;
+  height: 34px;
+  flex: none;
+}
+
+.brand-name {
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
+
+.site-nav a {
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-left: 1.25rem;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 2rem 0 3rem;
+}
+
+.site-footer .wrap {
+  max-width: 60rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.site-footer nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-right: 1.1rem;
+}
+
+.site-footer nav a:last-child {
+  margin-right: 0;
+}
+
+.site-footer nav a:hover {
+  color: var(--fg);
+  text-decoration: underline;
+}
+
+.legal main {
+  padding: 2.5rem 0 4rem;
+}
+
+.legal .wrap {
+  max-width: var(--max-w);
+}
+
+.legal h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.legal .effective {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.legal h2 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.legal p, .legal li {
+  color: var(--fg);
+}
+
+.legal ul {
+  padding-left: 1.25rem;
+}
+
+.legal .notice {
+  border-left: 3px solid var(--bylaws);
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.legal strong {
+  color: var(--fg);
+}

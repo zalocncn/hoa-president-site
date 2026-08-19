@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — HOA President</title>
-<meta name="description" content="HOA President collects no data. No account, no server, no network calls of any kind — this policy explains exactly what that means and why.">
+<meta name="description" content="HOA President collects no data. No account, no server, no network calls of any kind — this policy explains exactly what that means, and what this website itself does.">
 <meta property="og:title" content="HOA President — Privacy Policy">
 <meta property="og:description" content="HOA President collects no data. No account, no server, no network calls of any kind.">
 <meta property="og:type" content="website">
@@ -42,16 +42,18 @@
 <main>
   <div class="wrap">
     <h1>Privacy Policy</h1>
-    <p class="effective">Effective date: August 16, 2026</p>
+    <p class="effective">Effective date: August 19, 2026</p>
 
-    <p class="notice">Draft notice: this is a working draft prepared for App Store submission and general compliance planning. It has not been reviewed by an attorney.</p>
+    <p class="notice"><strong>The whole policy in one line:</strong> the HOA President app collects nothing and transmits nothing, because it contains no network layer at all. This website sets no cookies and runs no analytics, but — like every website — it is served by a host that keeps standard request logs. Section 10 says exactly what those contain.</p>
 
-    <p><strong>Publisher:</strong> Delvir Limited Liability Co. ("Delvir," "we," "us")<br>
+    <p><strong>Publisher and data controller:</strong> Delvir Limited Liability Co. ("Delvir," "we," "us")<br>
     30 N Gould St, Ste R, Sheridan, WY 82801, United States<br>
     Contact: <a href="mailto:team@delvir.co">team@delvir.co</a></p>
 
+    <p>This policy covers the HOA President iOS application (the "App") and the website at hoapresidentgame.com (the "Site"). They are different things and are treated separately below.</p>
+
     <h2>The short version</h2>
-    <p>HOA President does not collect any data. Not usage data, not device identifiers, not crash reports, not analytics events, not your name, not your location, not anything. There is no account to create, no server to talk to, and no way for information about you or your play to leave your device. This is not a policy choice we could quietly reverse in an update — it's an architectural fact: the app ships with <strong>no network layer at all</strong>. It contains no networking call, no analytics SDK, no advertising SDK, no crash reporter, and no third-party library of any kind. That absence is enforced by an automated test that fails the build if a forbidden networking symbol is ever introduced.</p>
+    <p>HOA President does not collect any data. Not usage data, not device identifiers, not crash reports, not analytics events, not your name, not your location, not anything. There is no account to create and no server to talk to. The app never sends anything anywhere on its own; the only way anything from it leaves your device is if you deliberately share it yourself, using iOS's own share sheet, to somewhere you choose — and even then it goes to that destination, never to us (see §2). This is not a policy choice we could quietly reverse in an update — it's an architectural fact: the app ships with <strong>no network layer at all</strong>. It contains no networking call, no analytics SDK, no advertising SDK, no crash reporter, and no third-party library of any kind. That absence is enforced by an automated test that fails the build if a forbidden networking symbol is ever introduced.</p>
     <p>Everything below exists to make that short version precise and legally complete.</p>
 
     <h2>1. What we collect</h2>
@@ -65,7 +67,7 @@
       <li>Whether the app crashed</li>
     </ul>
 
-    <h2>2. What stays on your device, and why it isn't "collection"</h2>
+    <h2>2. What stays on your device — and the one thing you can choose to share</h2>
     <p>HOA President saves your game locally so you can resume a presidency, keep your best runs, and build up your Archive and Past Presidents gallery. This includes:</p>
     <ul>
       <li>Your in-progress run and saved game state</li>
@@ -73,37 +75,46 @@
       <li>Any name you type in for your in-game president (this is fiction — see the app's own disclaimer — and is never validated against, or transmitted to, anything)</li>
       <li>App settings (sound, haptics, reduce-motion preference)</li>
     </ul>
-    <p>All of this is written to local storage inside the app's own sandboxed container on your device. None of it is transmitted anywhere, because the app has no network code capable of transmitting it. This is local storage under your control, not "collection" by us in any meaningful sense — we never receive a copy, see it, or have access to it.</p>
+    <p>All of this is written to local storage inside the app's own sandboxed container on your device. The app transmits none of it, because it has no network code capable of transmitting anything — the single, entirely user-initiated exception is the Share button described below. This is local storage under your control, not "collection" by us in any meaningful sense — we never receive a copy, see it, or have access to it.</p>
+    <p><strong>Sharing your final ledger is entirely your call.</strong> At the end of a run, the app offers a Share button and a Copy button for your end-of-term summary — a short line of text (the in-game president name you typed, how many days you lasted, and how it ended) and, optionally, a picture of the final Bulletin. Nothing happens unless you tap it. When you do, the app hands that text and image to <strong>iOS's own standard share sheet</strong> or your clipboard, and from there it goes only where <em>you</em> send it — a message, a note, a social app, whatever you pick. That destination's own privacy policy then applies to it. The app has no idea where you sent it, and <strong>we never receive it, see it, or learn that you shared anything at all</strong>, because the app still has no way to talk to us. If you would rather not share the name you typed, don't tap Share.</p>
     <p><strong>Deleting the app deletes everything.</strong> Because all state lives inside the app's own container and nowhere else, uninstalling HOA President permanently and irreversibly removes all of it. There is no backup copy on our side to delete, because none was ever made — we have nothing to delete on request because we never had anything in the first place.</p>
 
     <h2>3. Apple's own data (purchases, device backups)</h2>
-    <p>HOA President is a paid app purchased once through the App Store. That transaction — your Apple ID, payment method, and purchase record — is handled entirely by Apple under Apple's own privacy policy and is not shared with us. We do not receive your name, email, or payment details from Apple. If you use iCloud or iTunes/Finder device backups, any backup of the app's local files is governed by Apple's backup and iCloud terms, not by us.</p>
+    <p>HOA President is a paid app purchased once through the App Store. That transaction — your Apple ID, payment method, and purchase record — is handled entirely by Apple, which acts as an <strong>independent controller</strong> of that data under its own privacy policy, not as our processor and not on our instructions. Apple does not share your name, email, or payment details with us, and we do not receive them. If you use iCloud or iTunes/Finder device backups, any backup of the app's local files is governed by Apple's backup and iCloud terms, not by us.</p>
 
-    <h2>4. No tracking, no advertising, no data sharing or selling</h2>
-    <p>We do not track you across apps or websites. We do not serve ads. We do not use any third-party SDK — advertising, analytics, or otherwise — inside HOA President. Because we collect nothing, we have nothing to share, sell, rent, or disclose to any third party, data broker, or advertiser, and we never have. There are no "service providers" processing player data on our behalf, because no player data ever reaches us.</p>
+    <h2>4. No tracking, no advertising, no selling or sharing</h2>
+    <p>We do not track you across apps or websites. We do not serve ads. We do not use any third-party SDK — advertising, analytics, or otherwise — inside HOA President. Because we collect nothing, we have nothing to share, sell, rent, or disclose to any third party, data broker, or advertiser. Stated plainly, as those terms are defined by the California Consumer Privacy Act as amended by the CPRA: <strong>we do not sell your personal information, we do not share it for cross-context behavioral advertising, and we have not done either in the preceding twelve months.</strong> We never have, and structurally cannot, since none reaches us. We do not use or disclose sensitive personal information for any purpose beyond those permitted without a right to limit. There are no "service providers," "contractors," or "third parties" processing player data on our behalf, because no player data ever reaches us. We do not knowingly sell or share the personal information of consumers under 16.</p>
+    <p>Because we do not track, there is nothing for a Do Not Track or Global Privacy Control browser signal to switch off; we honor them by construction.</p>
 
     <h2>5. Children's privacy (COPPA)</h2>
-    <p>HOA President is rated 12+ on the App Store, driven by mild satirical content and infrequent mild crude humor — not by any data practice. Because we collect no personal information from any user, of any age, this app does not collect personal information from children under 13, and we do not knowingly collect, use, or disclose children's personal information as defined by the U.S. Children's Online Privacy Protection Act (COPPA). There are no accounts, no chat, no user-generated content, and no way for a child (or anyone) to submit information to us through the app.</p>
+    <p>HOA President is rated 9+ on the App Store, driven solely by infrequent mild crude humor typical of satire — not by any data practice. Because we collect no personal information from <em>any</em> user, of any age, this app does not collect personal information from children under 13, and we do not knowingly collect, use, or disclose children's personal information as defined by the U.S. Children's Online Privacy Protection Act (COPPA), or the personal data of anyone under 16 as contemplated by the GDPR. There are no accounts, no chat, no user-generated content, no advertising, and no way for a child — or anyone — to submit information to us through the app. If you believe a child has somehow provided personal information to us, email <a href="mailto:team@delvir.co">team@delvir.co</a> and we will delete it.</p>
 
     <h2>6. Your rights (GDPR / UK GDPR / CCPA / CPRA and similar laws)</h2>
-    <p>Data protection laws such as the EU/UK GDPR and the California Consumer Privacy Act (as amended by the CPRA) give you rights to access, correct, delete, or port your personal data, and to opt out of its sale or sharing. <strong>We have no personal data about you to act on.</strong> Because HOA President never transmits, collects, or stores any information about you outside your own device, there is nothing in our possession to access, correct, delete, export, or stop selling — we have never sold or shared personal information, and structurally cannot, since none reaches us.</p>
-    <p>If you submit a data request to us at the contact address below, we will confirm in writing that we hold no personal data about you, which is the accurate and complete response under both GDPR and CCPA/CPRA given this app's architecture.</p>
-    <p>We do not use automated decision-making or profiling.</p>
+    <p>Data protection laws such as the EU/UK GDPR and the California Consumer Privacy Act (as amended by the CPRA) give you rights to access, correct, delete, port, and limit the use of your personal data, to opt out of its sale or sharing, and not to be discriminated against for exercising those rights. <strong>In connection with the app, we have no personal data about you to act on.</strong> Because HOA President never transmits, collects, or stores any information about you outside your own device, there is nothing in our possession to access, correct, delete, export, or stop selling.</p>
+    <p>If you submit a data request to us at the contact address below, we will confirm in writing that we hold no personal data about you, which is the accurate and complete response under both GDPR and CCPA/CPRA given this app's architecture. You may use an authorized agent to make a request; we will still have nothing to disclose. We do not charge for requests and we do not discriminate against anyone who makes one.</p>
+    <p>We do not use automated decision-making or profiling. You have the right to lodge a complaint with your local supervisory authority.</p>
 
     <h2>7. Legal basis for processing (GDPR)</h2>
-    <p>We do not process personal data in connection with HOA President, so no lawful basis under Article 6 GDPR is engaged. This section is included for completeness rather than because it does substantive work here.</p>
+    <p>We do not process personal data in connection with the HOA President app, so no lawful basis under Article 6 GDPR is engaged there. For the limited Site and email data described in Sections 10 and 11, our lawful basis is our legitimate interest (Article 6(1)(f)) in operating and securing our website and in answering messages people choose to send us.</p>
 
     <h2>8. International users</h2>
-    <p>HOA President is distributed globally through the App Store. Because no personal data is collected, processed, or stored by us, there is no cross-border data transfer of personal data to describe, and no international data transfer mechanism (such as Standard Contractual Clauses) is required.</p>
+    <p>HOA President is distributed globally through the App Store. Because no personal data is collected, processed, or stored by us through the app, there is no cross-border data transfer of personal data to describe, and no international data transfer mechanism (such as Standard Contractual Clauses) is required.</p>
 
-    <h2>9. Data breach notice</h2>
-    <p>Because we never receive, store, or process personal data on any server we operate, we have nothing to breach. In the unlikely event we ever became aware of a security issue affecting the app, we would evaluate our notification obligations at that time, but there is no data flow this policy needs to protect today.</p>
+    <h2>9. Security and data breach</h2>
+    <p>The strongest security measure available to a product is not holding the data in the first place, and that is the one HOA President uses: your game exists only on your own device. Because we never receive, store, or process personal data on any server we operate, there is no store of user data that could be breached. In the unlikely event we ever became aware of a security issue affecting the app, we would evaluate our notification obligations at that time, but there is no data flow this policy needs to protect today.</p>
 
-    <h2>10. Changes to this policy</h2>
-    <p>If this policy changes — for example, if a future version of HOA President adds a feature that does involve data leaving the device — we will update this document, update the "Effective date" above, and update the App Store's Data Not Collected / privacy label to match before that version ships. We will not silently expand data collection without updating this policy first.</p>
+    <h2>10. This website</h2>
+    <p>The Site is a handful of static files. It sets <strong>no cookies</strong> of any kind, first- or third-party. It stores nothing in your browser's local storage. It runs <strong>no analytics</strong>, no advertising or tracking pixels, no session recording, no A/B testing, no embedded social or video widgets, and no third-party fonts or scripts: every image, style, font, and script is served from this domain, and a Content-Security-Policy header on every page instructs your browser to refuse anything loaded from anywhere else. There are no forms, no logins, and no way to submit anything to us through the Site.</p>
+    <p>What we cannot truthfully claim is that no server is involved at all. The Site is hosted by <strong>Vercel Inc.</strong>, and like every web host, Vercel's infrastructure automatically receives and logs the technical details your browser sends with each request in order to deliver the page, keep the Site available, and defend it against abuse. Those records typically include your IP address, the page or file requested, the date and time, the HTTP status and response size, your browser's user-agent string, and any referring page. Vercel processes this on our behalf as our service provider, under its own security and privacy commitments, and retains it for a limited period on a rolling basis. We do not use these records to identify you, we do not build profiles from them, we do not enrich or combine them with anything else, we do not sell or share them, and we do not connect them to the app in any way — the app never contacts this Site or any other server.</p>
 
-    <h2>11. Contact</h2>
-    <p>Questions about this policy or HOA President's data practices:</p>
+    <h2>11. If you email us</h2>
+    <p>If you write to <a href="mailto:team@delvir.co">team@delvir.co</a>, we receive your email address, your message, and whatever else your mail program includes, handled through our business email provider acting as our service provider. We use it only to answer you and to keep a record of the exchange, we keep it no longer than we reasonably need to, and we never add you to a mailing list, sell it, or share it for advertising. Please don't send us sensitive personal information — we have no need for it.</p>
+
+    <h2>12. Changes to this policy</h2>
+    <p>If this policy changes — for example, if a future version of HOA President adds a feature that does involve data leaving the device — we will update this document, update the "Effective date" above, and update the App Store's Data Not Collected privacy label to match before that version ships. We will not silently expand data collection without updating this policy first. Material changes will be reflected here; the version you agreed to is the one in force when you used the app.</p>
+
+    <h2>13. Contact</h2>
+    <p>Questions about this policy, or a data request you would like answered in writing:</p>
     <p><strong>Delvir Limited Liability Co.</strong><br>
     30 N Gould St, Ste R<br>
     Sheridan, WY 82801<br>
